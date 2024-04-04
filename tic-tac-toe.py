@@ -1,22 +1,25 @@
-def main():
-    board = initialiseBoard()
-    displayBoard(board)
-    
-def initialiseBoard():
-    board = []
-    for _ in range(6):
-        row = []
-        for _ in range(7):
-            row.append('-')
-        board.append(row)
-    return board
-    
-def displayBoard(board):
-    for row in board:
-        for cell in row:
-            print(cell, end=' ')
-        print()
-    print()
+board = []
 
-if __name__ == "__main__":
-    main()
+def start():
+    print("*********")
+    print("Connect 4")
+    print("*********")
+    print("")
+    input("Press enter to play!")
+    initilise_board()
+
+def initilise_board():
+    for row in range(7):
+        board.append(["-","-","-","-","-","-","-",])
+    print_board()
+
+def print_board():
+    print("1 2 3 4 5 6 7")
+    for row in board:
+        print()
+        print(row, end= "")
+    for collum in row:
+        print("-")
+
+    
+start()
