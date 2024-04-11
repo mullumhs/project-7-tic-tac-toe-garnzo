@@ -7,7 +7,7 @@ def main():
     while True:
         print_board()
         playerCount = tokenplace(playerCount)
-    wincheck()
+        wincheckhori()
 
 def start():
     print("*********")
@@ -40,9 +40,9 @@ def tokenplace(playerCount):
             playerCount += 1
             return playerCount
      
-def wincheck():
+def wincheckhori():
     for row in range(6):
         for col in range(4):
-            board[row][col] = board[row + 1][col + 1] = board[row][col] = board[row + 2][col + 2] = board[row][col] = board[row + 3][col + 3] = board[row][col] = board[row + 4][col + 4] 
-
+            board[row][col] = board[row][col + 1] = board[row][col + 2] = board[row][col + 3]
+        
 main()
