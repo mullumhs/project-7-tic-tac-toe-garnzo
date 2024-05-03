@@ -50,12 +50,19 @@ def tokenplace(playerCount):
         token = "O"
 
     print()
-    colluminp = int(input("Enter collum (1-3): ")) - 1
-    for row in range(2, -1, -1):
-        if board[row][colluminp] == "-":
-            board[row][colluminp] = token
+    
+    update = 0
+    while not update == 1:
+        colluminp = int(input("Enter collum (1-3): ")) - 1
+        rowimp = int(input("Enter Row (1-3): ")) -1
+        if board[rowimp][colluminp] == "-":
+            board[rowimp][colluminp] = token
             playerCount += 1
-            return playerCount
+            update = 1
+        else:
+            print("Token already has X/O in it, Try Again")
+    return playerCount
+        
 
 # call
 main()
