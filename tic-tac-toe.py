@@ -50,19 +50,34 @@ def tokenplace(playerCount):
         token = "O"
 
     print()
-    
     update = 0
     while not update == 1:
+        # user input
         colluminp = int(input("Enter collum (1-3): ")) - 1
-        rowimp = int(input("Enter Row (1-3): ")) -1
-        if board[rowimp][colluminp] == "-":
-            board[rowimp][colluminp] = token
-            playerCount += 1
-            update = 1
+        rowinp = int(input("Enter Row (1-3): ")) -1
+
+        # input validation
+        if colluminp >= 0 and colluminp <= 2 and rowinp >= 0 and rowinp <= 2:
+                # token place
+                if board[rowinp][colluminp] == "-":
+                    board[rowinp][colluminp] = token
+                    playerCount += 1
+                    update = 1
+                else:
+                    print("Token already has X/O in it, Try Again")          
         else:
-            print("Token already has X/O in it, Try Again")
-    return playerCount
+            print("Error, number is not in Range 1-3, Try Again")   
         
+    return playerCount
+
+def win_check():
+    print()
+
+def win_check_hori():
+    print()
+
+def win_check_verti():
+    print()
 
 # call
 main()
