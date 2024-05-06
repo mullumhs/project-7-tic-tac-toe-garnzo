@@ -9,6 +9,7 @@ def main():
     while True:
         print_board()
         playerCount = tokenplace(playerCount)
+        win_check()
     
 
 def welcome():
@@ -89,10 +90,18 @@ def win_check_hori():
                 return "O"
 
 def win_check_verti():
-    print()
+    for i in range(3):
+        if board[0][i] == board[1][i] == board[2][i] and not board[0][i] == "-":
+            if board[0][i] == "X":
+                print("Player X Wins!")
+                return "X"
+            
+            elif board[0][i] == "O":
+                print("Player O Wins!")
+                return "O"
 
 def win_check_diagy():
     print()
-    print()
+    
 # call
 main()
