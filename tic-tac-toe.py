@@ -71,13 +71,28 @@ def tokenplace(playerCount):
     return playerCount
 
 def win_check():
-    print()
-
+    if win_check_hori() == "X" or win_check_verti() == "X" or win_check_diagy() == "X":
+        return "X"
+    
+    if win_check_hori() == "O" or win_check_verti() == "O" or win_check_diagy() == "O":
+        return "O"
+    
 def win_check_hori():
-    print()
+    for i in range(3):
+        if board[i][0] == board[i][1] == board[i][2] and not board[i][0] == "-":
+            if board[i][0] == "X":
+                print("Player X Wins!")
+                return "X"
+            
+            elif board[i][0] == "O":
+                print("Player O Wins!")
+                return "O"
 
 def win_check_verti():
     print()
 
+def win_check_diagy():
+    print()
+    print()
 # call
 main()
