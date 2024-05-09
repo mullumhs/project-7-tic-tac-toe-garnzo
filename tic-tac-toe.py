@@ -9,8 +9,13 @@ def main():
     while True:
         print_board()
         playerCount = tokenplace(playerCount)
-        if playerCount == "X" or "O":
-            win_check()
+        if win_check():
+            if playerCount % 2 == 0:
+                print("Player O has won")
+            else:
+                print("Player X has won")
+            break
+            
 
     
 
@@ -73,9 +78,8 @@ def tokenplace(playerCount):
         
     return playerCount
 
-def win_check(playerCount):
+def win_check():
     if win_check_hori() or win_check_verti() or win_check_diagy():
-        print(f"Player {playerCount} has won")
         return True
         
     
@@ -93,7 +97,7 @@ def win_check_verti():
                 
 
 def win_check_diagy():
-    print()
+    return False
     
 # call
 main()
